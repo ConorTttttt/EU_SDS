@@ -4,7 +4,13 @@ A static, browser-based decision-support tool for **REACH Annex II, Section 9** 
 
 ## Start
 
-Open `index.html` in a modern browser, or publish the repository using **GitHub Pages** (Settings → Pages → Deploy from a branch → main → /root). No backend, account or dependencies are required.
+Deploy the repository using **GitHub Pages** (Settings → Pages → Deploy from a branch → main → /root). For local development, run a small static server from the repository directory:
+
+```sh
+python3 -m http.server 8000
+```
+
+Then open http://localhost:8000. ES module imports require a local HTTP server in browsers that block modules from `file://` URLs. No application backend, account or package installation is required.
 
 ## Reading the results
 
