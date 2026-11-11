@@ -1,0 +1,26 @@
+name: Section 9 rules tests
+
+on:
+  push:
+    paths:
+      - 'rules.mjs'
+      - 'tests/**'
+      - '.github/workflows/test.yml'
+  pull_request:
+    paths:
+      - 'rules.mjs'
+      - 'tests/**'
+      - '.github/workflows/test.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run applicability rule tests
+        run: node --test tests/*.test.mjs
