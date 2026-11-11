@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="EU REACH Annex II Section 9 applicability calculator for SDS authors: 18 physical and chemical properties, with reasons and references.">
+  <meta name="theme-color" content="#101c2d">
+  <title>Section 9 applicability | EU SDS</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="masthead">
+    <div class="shell mast-inner">
+      <a class="brand" href="#top" aria-label="EU SDS home"><span class="brand-mark" aria-hidden="true">§9</span><span>EU SDS <small>Authoring tools</small></span></a>
+      <div class="header-tag">REACH ANNEX II · REG. (EU) 2020/878</div>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero shell" id="top">
+      <div class="eyebrow"><span class="eyebrow-dot"></span> PHYSICAL &amp; CHEMICAL PROPERTIES</div>
+      <h1>Section 9,<br><em>decoded.</em></h1>
+      <p class="intro">Select your product’s physical state. See which SDS Section 9.1 entries must be addressed, which are <strong>not applicable</strong>, and which <strong>need further assessment</strong>—with the reason for every decision.</p>
+      <div class="hero-points">
+        <span>18 properties</span><span>State-based exclusions</span><span>Copy-ready guidance</span>
+      </div>
+    </section>
+
+    <div class="shell workspace">
+      <section class="panel input-panel" aria-labelledby="configure-heading">
+        <div class="panel-heading">
+          <span class="step">01 / INPUT</span>
+          <h2 id="configure-heading">Describe the product</h2>
+          <p>Only select facts you know. Unknowns remain marked for assessment.</p>
+        </div>
+
+        <form id="calculator-form">
+          <fieldset class="state-fieldset">
+            <legend>Physical state <span class="required">*</span></legend>
+            <div class="state-grid">
+              <label class="state-choice">
+                <input type="radio" name="state" value="solid">
+                <span class="state-graphic" aria-hidden="true">◈</span>
+                <span class="state-name">Solid</span>
+                <span class="state-desc">Powder, crystal, paste, block</span>
+              </label>
+              <label class="state-choice">
+                <input type="radio" name="state" value="liquid" checked>
+                <span class="state-graphic" aria-hidden="true">◉</span>
+                <span class="state-name">Liquid</span>
+                <span class="state-desc">Solution, oil, viscous fluid</span>
+              </label>
+              <label class="state-choice">
+                <input type="radio" name="state" value="gas">
+                <span class="state-graphic" aria-hidden="true">≋</span>
+                <span class="state-name">Gas</span>
+                <span class="state-desc">Compressed, liquefied gas</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="field-grid">
+            <label class="field">
+              <span>Product category</span>
+              <select name="kind" id="kind">
+                <option value="substance">Substance</option>
+                <option value="mixture">Mixture</option>
+              </select>
+            </label>
+            <label class="field check-field">
+              <input type="checkbox" id="aerosol" name="aerosol">
+              <span><strong>Supplied as an aerosol?</strong><small>Packaging/presentation, not a separate CLP physical state</small></span>
+            </label>
+          </div>
+
+          <details class="advanced" id="advanced">
+            <summary>Refine with known chemical details <span class="summary-aside">Optional</span></summary>
+            <div class="advanced-body">
+              <p>These details affect specific entries such as pH, partition coefficient and particle characteristics. Do not guess.</p>
+              <div class="field-grid">
+                <label class="field">
+                  <span>Chemical nature <small>9.1(n)</small></span>
+                  <select name="chemistry" id="chemistry">
+                    <option value="unknown">Unknown / not specified</option>
+                    <option value="organic">Organic</option>
+                    <option value="inorganic">Inorganic</option>
+                    <option value="ionic-liquid">Ionic liquid</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Aqueous pH context <small>9.1(k)</small></span>
+                  <select name="phContext" id="phContext">
+                    <option value="unknown">Unknown / not specified</option>
+                    <option value="aqueous">Aqueous liquid or testable solution</option>
+                    <option value="non-polar">Non-polar / aprotic</option>
+                    <option value="insoluble">Insoluble in water</option>
+                    <option value="water-reactive">Reacts with water</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Solid form <small>9.1(r)</small></span>
+                  <select name="solidForm" id="solidForm">
+                    <option value="unknown">Unknown / not specified</option>
+                    <option value="particulate">Particulate (powder, granules)</option>
+                    <option value="monolithic">Monolithic (non-particulate)</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+          </details>
+
+          <div class="form-actions">
+            <button class="btn btn-quiet" type="reset">Reset inputs</button>
+            <span class="auto-note"><span class="live-dot"></span> Results update automatically</span>
+          </div>
+        </form>
+      </section>
+
+      <section class="results-section" aria-labelledby="results-heading">
+        <div class="results-head">
+          <div><span class="step">02 / RESULTS</span><h2 id="results-heading">Applicability assessment</h2></div>
+          <p>Based on <strong id="selected-profile">liquid substance</strong></p>
+        </div>
+
+        <div class="notice" role="note">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3 2 21h20L12 3Z"/><path d="M12 9v5m0 4h.01"/></svg>
+          <p><strong>State alone cannot decide everything.</strong> “Assess” is <em>not</em> the same as “Not applicable”. All 18 entries in 9.1 must be addressed in a completed SDS, including entries without available data.</p>
+        </div>
+
+        <div class="metrics" aria-label="Assessment summary">
+          <div class="metric metric-yes"><span class="metric-label">Applicable</span><strong id="count-applicable">—</strong><small>Address the property</small></div>
+          <div class="metric metric-no"><span class="metric-label">Not applicable</span><strong id="count-not-applicable">—</strong><small>State a reason</small></div>
+          <div class="metric metric-check"><span class="metric-label">Needs assessment</span><strong id="count-assess">—</strong><small>Check the product</small></div>
+        </div>
+
+        <div class="results-toolbar">
+          <label class="search-wrap"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><span class="visually-hidden">Search properties</span><input id="search" type="search" placeholder="Search properties..." autocomplete="off"></label>
+          <label class="filter-wrap"><span class="visually-hidden">Filter by applicability</span><select id="filter"><option value="all">All properties</option><option value="applicable">Applicable</option><option value="not-applicable">Not applicable</option><option value="assess">Needs assessment</option></select></label>
+        </div>
+
+        <div class="result-list" id="result-list" aria-live="polite"></div>
+        <p class="empty-state" id="no-results" hidden>No properties match the current filter.</p>
+
+        <div class="export-actions">
+          <button class="btn btn-primary" id="copy" type="button">Copy authoring checklist</button>
+          <button class="btn btn-secondary" id="csv" type="button">Export CSV</button>
+          <button class="btn btn-secondary" id="print" type="button">Print</button>
+          <p id="feedback" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="panel extra-panel" aria-labelledby="other-heading">
+        <span class="step">03 / ADDITIONAL CHARACTERISTICS</span>
+        <h2 id="other-heading">What about Section 9.2?</h2>
+        <p>Section 9.2 is <strong>relevance-based</strong>, not an automatic 18-item checklist. The properties below may need to be included when they are important for safe use. Physical state alone does not confirm or exclude these hazards.</p>
+        <div class="extras-grid">
+          <details class="extra"><summary>9.2.1 — Physical hazard classes <span>17 categories</span></summary><div id="hazard-classes" class="extra-items"></div></details>
+          <details class="extra"><summary>9.2.2 — Other safety characteristics <span>12 characteristics</span></summary><div id="other-characteristics" class="extra-items"></div></details>
+        </div>
+        <p class="footnote">For example, 9.1(g) explosion limits do not apply to solids, but 9.2.2(c) explosible dust/air mixtures may still matter for combustible powders.</p>
+      </section>
+
+      <section class="source-panel" aria-labelledby="sources-heading">
+        <h2 id="sources-heading">Regulatory basis</h2>
+        <p>This tool reflects the physical-state rules in REACH Annex II §9.1 and the relevance-based requirements in §9.2. It assists SDS authors; it is not a substitute for a qualified assessment of the actual product, available studies, CLP classification or applicable obligations.</p>
+        <div class="source-links">
+          <a target="_blank" rel="noopener noreferrer" href="https://eur-lex.europa.eu/eli/reg/2020/878/oj">Commission Regulation (EU) 2020/878 ↗</a>
+          <a target="_blank" rel="noopener noreferrer" href="https://eur-lex.europa.eu/eli/reg/2006/1907">REACH Regulation ↗</a>
+          <a target="_blank" rel="noopener noreferrer" href="https://echa.europa.eu/guidance-documents/guidance-on-reach">ECHA REACH guidance ↗</a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer"><div class="shell footer-inner"><span>EU SDS · Section 9 applicability</span><span>For SDS authoring support · Not legal advice</span></div></footer>
+</body>
+</html>
